@@ -5,6 +5,9 @@
 
 #include <iostream>
 
+#include "features.h"
+
+
 int main(int argc, char** argv)
 {
     if (argc == 1)
@@ -15,7 +18,7 @@ int main(int argc, char** argv)
     else if (strcmp(argv[1], "start") == 0)
     {
         // Handle 'start'
-        std::cout << "start\n";
+        features::start();
     }
     else if (strcmp(argv[1], "stop") == 0)
     {
