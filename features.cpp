@@ -5,6 +5,7 @@
 #include "features.h"
 
 #include <chrono>
+#include <fstream>
 #include <iostream>
 #include <iomanip>
 
@@ -31,6 +32,12 @@ namespace features
 
         std::cout << "start time: " << std::put_time(std::localtime(&start_output), "%H:%M") << "\n"
                   << "end time:   " << std::put_time(std::localtime(&end_output),   "%H:%M") << "\n";
+
+        // Open file stream to write new track
+        std::ofstream output_file("track.txt", std::ios::out | std::ios::binary);
+
+        output_file << std::put_time(std::localtime(&start_output), "%F %T") << " start\n";
+
     }
 }
 
